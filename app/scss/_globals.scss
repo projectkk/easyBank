@@ -1,0 +1,160 @@
+
+//@import url("_mixins.scss");
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-small;
+    font-weight: 300;
+    color: $grayishBlue;
+    line-height: 1.3;
+    overflow-x: hidden;
+
+    @include breakpoint-up(large){
+        font-size: $font-med;
+    }
+    &.noscroll {
+        overflow: hidden;
+      }
+}//end body
+
+h1, h2, h3 {
+    font-weight: 300;
+    font-size: 2.31;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-top: 0px;
+}
+
+h1 { //h1 tag styler
+    margin-bottom: 1.5rem;
+    @include breakpoint-up(large){ //Makes font larger for desktop
+        font-size: $font-xlarge;
+    }
+}// end h1 
+
+h2 {// default mobile h2
+    font-size: 1.875rem;
+    margin-bottom: 1.5625;
+    @include breakpoint-up(large){ //Desktop h2
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+}//end h2
+
+p {
+    font-weight: 300;
+    font-size: 2.31;
+    line-height: 1.5;
+    margin-bottom: 1.5;
+    color: $darkBlue; 
+}//end p
+
+
+a, 
+a:visited, 
+a:hover {
+    text-decoration: none;
+}
+
+//Spacing
+.container {
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    //modifiers for the global container
+    &--pt { 
+        padding-top: 4.375rem;
+    }
+    &--pr { //add padding to the right
+        padding-right: 1.5;
+    }
+    &--pb { 
+        padding-bottom: 4.375rem; 
+    }
+    &--pl { 
+        padding-left: 1.5rem;
+    }
+    &--py { // adding vertical padding
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem; 
+    }
+    &--px {// adding horizontal padding
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    &--pall{ // adding all the padding
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;        
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;        
+        }
+    }
+}//end container
+
+
+//Flexbox Styles
+// display flex variable and properties
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// Buttons
+button, 
+.button {
+    display: inline-block;
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $white;
+    font-weight: 400;
+    font-size: $font-small;
+    transition: opacity 300ms ease-in-out;
+    &:hover{
+        opacity: 0.75;
+    }
+}// Button
+
+//Visibility
+.hide-for-mobile {
+// hide for tablet and mobile
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+// hide for desktop viewport widths
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+

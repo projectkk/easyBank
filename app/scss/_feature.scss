@@ -1,0 +1,73 @@
+
+//this uses the flexbox method to style for a grid/table
+
+.feature {
+    background-color: $lightGrayishBlue;
+    text-align: center;
+    @include breakpoint-up(medium){// tablet and desktop
+        text-align: left;
+    }
+
+    &__intro {
+        margin-bottom: 3.75rem;
+        @include breakpoint-up(large){//desktop
+            width: 60%;
+        }
+    }//end intro
+    &__grid {
+        @include breakpoint-up(medium){ //for tablet
+            display: flex; //going to display flex when medium sized and up
+            flex-wrap: wrap;
+        }
+    }//end grid
+
+    &__item {
+        //border: 1px solid magenta; //for testing
+        padding: .9375rem;
+        
+        @include breakpoint-up(medium){ // for tablet
+            flex: 0 0 50%;
+        }       
+        @include breakpoint-up(large){ // for desktop
+            flex: 1;
+        }
+    }// end item
+    &__icon {
+        margin-bottom: 1.875rem;
+        @include breakpoint-up(large){
+            margin-bottom: 2.75rem;
+        }
+    }//end icon
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 1.15;
+        color: $darkBlue;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(large){
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }// end title
+
+    &__description {
+        font-size: .875rem;
+        line-height: 1.5rem;
+
+        @include breakpoint-up(large){
+
+        }
+    }// end description
+
+}// end feature
+
+
+
+
+
+
+
+
+
