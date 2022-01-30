@@ -15,4 +15,9 @@ Live Sass Compiler
 Live Server
 By Ritwick Dey
 
-
+Current Status:
+There is still one bug I wasn't able to figure out. 
+When the app is in mobile mode and you click on the Hamburger, there is supposed to be a menu that pops up. 
+But the menu does not appear above the Hero's photos. 
+I had narrow'd it down to the _Hero &__logo class being the problem. 
+But not sure how to fix it yet. 
