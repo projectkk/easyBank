@@ -53,6 +53,7 @@
             background-size: 93%;
             background-repeat: no-repeat;
             background-position: center bottom;
+            
             @include breakpoint-up(medium){ //tablet size
                 background-size: 52%;
             }
